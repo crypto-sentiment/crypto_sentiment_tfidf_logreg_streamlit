@@ -1,12 +1,13 @@
 data:
-  path_to_data: data               # Local path where the train and validation data should be placed in order to run the model training
-  train_filename: 20190110_train_4500.csv            # Filename of the training data
+  path_to_data: data                          # Local path where the train and validation data should be placed
+                                              # in order to run the model training
+  train_filename: 20190110_train_4500.csv     # Filename of the training data
   text_field_name: title
   label_field_name: sentiment
   num_classes: 3
   max_text_length_words: 500
 
-cross_validation:
+cross_validation:                             # Params of cross-validation
   cv_perform_cross_val: false
   cv_n_splits: 5
   cv_shuffle: true
@@ -14,7 +15,7 @@ cross_validation:
   cv_n_jobs: 4
   cv_avg_f1_scoring: f1_macro
 
-model:
+model:                                       # Params of the model defined in src/model.py
   path_to_model: static/models/logit_tfidf_btc_sentiment.pkl
   tfidf:
     stop_words: english

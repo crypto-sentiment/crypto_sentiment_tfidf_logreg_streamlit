@@ -1,4 +1,3 @@
-import altair as alt
 from pathlib import Path
 import pandas as pd
 import pickle
@@ -14,6 +13,7 @@ with open(str(project_root / "config.yml")) as f:
     params = yaml.load(f, Loader=yaml.FullLoader)
 
 
+# loading the model into memory
 def load_model(model_path):
     with open(model_path, "rb") as f:
         model = pickle.load(f)
@@ -26,7 +26,7 @@ model = load_model(params["model"]["path_to_model"])
 def run_app():
 
     # headers
-    st.title("Bitcoin news sentiment")
+    st.title("Cryptonews sentiment")
     st.write("by Yury Kashnitsky")
     st.image(f"static/img/sentiment_icon.jpeg", width=300)
 
