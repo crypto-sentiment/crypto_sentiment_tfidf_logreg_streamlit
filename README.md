@@ -10,3 +10,5 @@ Launching the app:
 
  - install requirements from `requirements.txt`
  - execute `streamlit run src/app.py`
+
+To run this as a background process, you can do `(streamlit run src/app.py > streamlit.log 2>&1 &)`. This will also write all Stramlit logs including error logs to the file `streamlit.log`.
